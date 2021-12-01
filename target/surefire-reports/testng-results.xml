@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="2" passed="2">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Desktop Suite" duration-ms="72580" started-at="2021-12-01T21:06:58 IST" finished-at="2021-12-01T21:08:11 IST">
+    <groups>
+    </groups>
+    <test name="Appium Test" duration-ms="72580" started-at="2021-12-01T21:06:58 IST" finished-at="2021-12-01T21:08:11 IST">
+      <class name="MortgageTests">
+        <test-method status="PASS" signature="startSession(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)[pri:0, instance:MortgageTests@4564e94b]" name="startSession" is-config="true" duration-ms="54979" started-at="2021-12-01T21:06:58 IST" finished-at="2021-12-01T21:07:53 IST">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[mobile]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="2">
+              <value>
+                <![CDATA[http://localhost:3000/]]>
+              </value>
+            </param>
+            <param index="3">
+              <value>
+                <![CDATA[5]]>
+              </value>
+            </param>
+            <param index="4">
+              <value>
+                <![CDATA[.\Files\NewUsers.csv]]>
+              </value>
+            </param>
+            <param index="5">
+              <value>
+                <![CDATA[yes]]>
+              </value>
+            </param>
+            <param index="6">
+              <value>
+                <![CDATA[jdbc:mysql://sql11.freemysqlhosting.net:3306/sql11454991]]>
+              </value>
+            </param>
+            <param index="7">
+              <value>
+                <![CDATA[sql11454991]]>
+              </value>
+            </param>
+            <param index="8">
+              <value>
+                <![CDATA[6lcdegJM51]]>
+              </value>
+            </param>
+            <param index="9">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+            <param index="10">
+              <value>
+                <![CDATA[]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- startSession -->
+        <test-method status="PASS" signature="Test01_calculateUsingDataFromDB()[pri:0, instance:MortgageTests@4564e94b]" name="Test01_calculateUsingDataFromDB" duration-ms="14890" started-at="2021-12-01T21:07:53 IST" description="Calculate using data from DB and verify input is above zero" finished-at="2021-12-01T21:08:08 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Test01_calculateUsingDataFromDB -->
+        <test-method status="PASS" signature="test02_verifySaved()[pri:0, instance:MortgageTests@4564e94b]" name="test02_verifySaved" duration-ms="2417" started-at="2021-12-01T21:08:08 IST" description="Verify last one added was saved" finished-at="2021-12-01T21:08:11 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- test02_verifySaved -->
+        <test-method status="PASS" signature="endSession()[pri:0, instance:MortgageTests@4564e94b]" name="endSession" is-config="true" duration-ms="6" started-at="2021-12-01T21:08:11 IST" finished-at="2021-12-01T21:08:11 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- endSession -->
+      </class> <!-- MortgageTests -->
+    </test> <!-- Appium Test -->
+  </suite> <!-- Desktop Suite -->
+</testng-results>

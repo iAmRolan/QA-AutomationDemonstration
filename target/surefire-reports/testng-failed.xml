@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite guice-stage="DEVELOPMENT" verbose="0" name="Failed suite [Desktop Suite]">
+  <listeners>
+    <listener class-name="Utilities.Listeners"/>
+  </listeners>
+  <test thread-count="5" verbose="0" name="Appium Test(failed)">
+    <parameter name="PlatformName" value="mobile"/>
+    <parameter name="BrowserName" value="chrome"/>
+    <parameter name="DDTFile" value=".\Files\NewUsers.csv"/>
+    <parameter name="ActiveDB" value="yes"/>
+    <parameter name="DBPassword" value="6lcdegJM51"/>
+    <parameter name="Timeout" value="5"/>
+    <parameter name="ApiUserName" value=""/>
+    <parameter name="DBURL" value="jdbc:mysql://sql11.freemysqlhosting.net:3306/sql11454991"/>
+    <parameter name="ApiPassword" value=""/>
+    <parameter name="URL" value="http://localhost:3000/"/>
+    <parameter name="DBUsername" value="sql11454991"/>
+    <classes>
+      <class name="MortgageTests">
+        <methods>
+          <include name="startSession"/>
+          <include name="endSession"/>
+          <include name="Test01_calculateUsingDataFromDB"/>
+          <include name="test02_verifySaved"/>
+        </methods>
+      </class> <!-- MortgageTests -->
+    </classes>
+  </test> <!-- Appium Test(failed) -->
+</suite> <!-- Failed suite [Desktop Suite] -->

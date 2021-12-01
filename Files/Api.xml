@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Environment>
+    <OKCode>200</OKCode>
+    <UserID>28</UserID>
+    <UserName>Abed</UserName>
+    <UserIDToUpdate>30</UserIDToUpdate>
+    <NewEmail>updatedEmail@test.com</NewEmail>
+    <NewNameToAdd>NewUser</NewNameToAdd>
+    <NewEmailToAdd>newuser@example.com</NewEmailToAdd>
+    <NewUserLogin>NewUser</NewUserLogin>
+    <NewUserPassword>userpassword</NewUserPassword>
+</Environment>

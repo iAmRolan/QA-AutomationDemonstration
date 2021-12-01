@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Desktop Suite" parallel="false">
+
+    <listeners>
+        <listener class-name="Utilities.Listeners"/>
+    </listeners>
+    <!--        Needs WinApp Driver        -->
+    <test name="Desktop Test">
+        <parameter name="PlatformName" value="desktop"/>
+        <parameter name="BrowserName" value="chrome"/>
+        <parameter name="URL" value="http://localhost:3000/"/>
+        <parameter name="Timeout" value="5"/>
+        <parameter name="DDTFile" value=".\Files\NewUsers.csv"/>
+        <parameter name="ActiveDB" value="no"/>
+        <parameter name="DBURL" value=""/>
+        <parameter name="DBUsername" value=""/>
+        <parameter name="DBPassword" value=""/>
+        <parameter name="ApiUserName" value=""/>
+        <parameter name="ApiPassword" value=""/>
+        <classes>
+            <class name="DesktopAppTests"/>
+        </classes>
+    </test> <!-- Test -->
+
+</suite> <!-- Suite -->

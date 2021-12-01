@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Environment>
+    <ExpectedRepaymentSaved>£1.29</ExpectedRepaymentSaved>
+    <SelectAmountColumn>SELECT `amount` FROM `MortgageCalculatorData`</SelectAmountColumn>
+    <SelectTermColumn>SELECT `term` FROM `MortgageCalculatorData`</SelectTermColumn>
+    <SelectRateColumn>SELECT `rate` FROM `MortgageCalculatorData`</SelectRateColumn>
+</Environment>

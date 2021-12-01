@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Environment>
+    <FirstNumber>Seven</FirstNumber>
+    <SecondNumber>Nine</SecondNumber>
+    <AdditionSign>Plus</AdditionSign>
+    <MulSign>Multiply by</MulSign>
+    <Equals>Equals</Equals>
+    <ExpectedAdditionResult>16</ExpectedAdditionResult>
+    <ExpectedMulResult>63</ExpectedMulResult>
+</Environment>
