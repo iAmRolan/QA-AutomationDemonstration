@@ -1,7 +1,4 @@
-# QA Automation Testing Showcase
-### This project is made during our bootcamp to demonstrate our knowledge and capabilities in QA Automation.
-
-
+# QA Automation Testing 
 
 ## Overview
 
