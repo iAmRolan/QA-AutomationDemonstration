@@ -19,7 +19,7 @@ public class DesktopAppTests extends CommonOps {
 
     @Test(description = "Test Multiplication function")
     @Description("Verify Multiplication function result")
-    public void test2() {
+    public void test2_multiplication() {
         DesktopWorkFlows.mul();
         Verifications.verifyText(calculatorPage.getResult(), getData("ExpectedMulResult"));
     }
