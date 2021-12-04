@@ -17,16 +17,16 @@ public class ServerAdminUsersPage {
     @FindBy(css = "div.page-action-bar > a > span")
     private static WebElement newUserBtn;
 
-    @FindBy(css = "div:nth-child(1) > div:nth-child(2) > div > div > input")
+    @FindBy(css = "input[name='name']")
     private static WebElement nameTxt;
 
-    @FindBy(css = "div:nth-child(2) > div:nth-child(2) > div > div > input")
+    @FindBy(css = "input[name='email']")
     private static WebElement emailTxt;
 
-    @FindBy(css = "div:nth-child(3) > div:nth-child(2) > div > div > input")
+    @FindBy(css = "input[name='login']")
     private static WebElement usernameTxt;
 
-    @FindBy(css = "div:nth-child(4) > div:nth-child(2) > div > div > input")
+    @FindBy(css = "input[name='password']")
     private static WebElement passwordTxt;
 
     @FindBy(css = "form > button")

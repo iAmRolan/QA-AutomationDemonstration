@@ -23,7 +23,7 @@ public class GrafanaTests extends CommonOps {
 
     @Test(description = "Test grafana logo")
     @Description("Verify grafana logo found")
-    public void test02_grafanaLogo() throws FindFailed {
+    public void test02_grafanaLogo() {
         Verifications.verifyImage(GrafanaWorkFlows.isGrafanaLogoExists());
     }
 
@@ -44,7 +44,7 @@ public class GrafanaTests extends CommonOps {
     @Description("Verify all users added.")
     public void test0402_verifyAllUserAdded() {
         // Set amount of users to appear after adding all users.
-        expectedAddedUsers = 13;
+        expectedAddedUsers = Integer.parseInt(getData("ExpectedUsers"));
 
         GrafanaWorkFlows.goToServerAdminPage();
         Verifications.verifyUsersAdded(serverAdminUsersPage.getUsersList());

@@ -9,4 +9,7 @@
     <NewEmailToAdd>newuser@example.com</NewEmailToAdd>
     <NewUserLogin>NewUser</NewUserLogin>
     <NewUserPassword>userpassword</NewUserPassword>
+    <UsersApiUrl>http://localhost:3000/api/users/</UsersApiUrl>
+    <AdminApiURL>http://localhost:3000/api/admin/users</AdminApiURL>
+    <BaseURI>http://localhost:3000/api/org</BaseURI>
 </Environment>

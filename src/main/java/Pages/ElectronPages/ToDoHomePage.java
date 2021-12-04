@@ -12,9 +12,6 @@ public class ToDoHomePage {
     @FindBy(xpath = "/html/body/div/div[1]/div[2]/input")
     private static WebElement taskInput;
 
-    @FindBy(css = "body > div > div.transition_1AwoP > div.wrapper_DtvJU > div:nth-child(2) > div > div > div > div > label > svg")
-    private static WebElement toggleCompleteTask;
-
     @FindBy(css = "body > div > div.transition_1AwoP > div.wrapper_DtvJU > div:nth-child(2) > div > div > div > div > svg")
     private static WebElement deleteIcon;
 
@@ -30,10 +27,6 @@ public class ToDoHomePage {
 
     public WebElement getTaskInput() {
         return taskInput;
-    }
-
-    public WebElement getToggleCompleteTask() {
-        return toggleCompleteTask;
     }
 
     public WebElement getDeleteIcon() {

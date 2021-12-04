@@ -7,4 +7,6 @@
     <Equals>Equals</Equals>
     <ExpectedAdditionResult>16</ExpectedAdditionResult>
     <ExpectedMulResult>63</ExpectedMulResult>
+    <AppPath>Microsoft.WindowsCalculator_8wekyb3d8bbwe!App</AppPath>
+    <IPPort>http://127.0.0.1:4723</IPPort>
 </Environment>

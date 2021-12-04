@@ -10,16 +10,16 @@ import io.qameta.allure.Step;
  */
 public class ToDoAppWorkFlows extends CommonOps {
 
-    @Step
+    @Step("Add new task.")
     public static void addNewTask() {
-        expectedTaskTest = "Test";
+        expectedTaskTest = getData("ExpectedTaskTest");
         UIActions.sendKeysToElement(toDoHomePage.getTaskInput(), expectedTaskTest);
         UIActions.sendReturnKey(toDoHomePage.getTaskInput());
     }
 
-    @Step
+    @Step("Delete first task.")
     public static void deleteTask() {
-        expectedTextAfterDelete = "There's no task";
+        expectedTextAfterDelete = getData("ExpectedTextAfterDelete");
         UIActions.clickElement(toDoHomePage.getDeleteIcon());
     }
 

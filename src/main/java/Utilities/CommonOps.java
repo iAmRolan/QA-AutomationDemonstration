@@ -131,12 +131,12 @@ public class CommonOps extends Variables {
 
     @Step("Initialize Electron")
     public static void initElectron() {
-        electronAppPath = "C:/Users/thero/AppData/Local/Programs/todolist/Todolist.exe";
+        electronAppPath = getData("appPath");
 
         dtf = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         now = LocalDateTime.now();
 
-        System.setProperty("webdriver.chrome.driver", "./Drivers/electrondriver.exe");
+        System.setProperty(getData("SetPropertyKey"), getData("SetElectronDriverPath"));
         chromeOptions = new ChromeOptions();
         chromeOptions.setBinary(electronAppPath);
         dc = new DesiredCapabilities();
@@ -150,10 +150,10 @@ public class CommonOps extends Variables {
 
     @Step("Initialize api http request")
     public static void initAPI() {
-        usersApiUrl = "http://localhost:3000/api/users/";
-        adminApiURL = "http://localhost:3000/api/admin/users";
+        usersApiUrl = getData("UsersApiUrl");
+        adminApiURL = getData("AdminApiURL");
 
-        RestAssured.baseURI = "http://localhost:3000/api/org";
+        RestAssured.baseURI = getData("BaseURI");
         httpRequest = RestAssured.given().auth().preemptive().basic(apiUserName, apiPassword);
         httpRequest.header("Content-Type", "application/json");
 
@@ -161,29 +161,28 @@ public class CommonOps extends Variables {
 
     @Step("Initialize Desktop")
     public static void initDesktop() throws IOException {
-        dc.setCapability("app", "Microsoft.WindowsCalculator_8wekyb3d8bbwe!App");
-        driver = new WindowsDriver(new URL("http://127.0.0.1:4723"), dc);
+        dc.setCapability("app", getData("AppPath"));
+        driver = new WindowsDriver(new URL(getData("IPPort")), dc);
         setDriverTimeoutAndWait();
     }
 
     @Step("Initialize Appium")
     public static void initAppium() throws MalformedURLException, SQLException, ClassNotFoundException {
-        reportDirectory = "reports";
-        reportFormat = "xml";
-        testName = "Untitled";
+        reportDirectory = getData("ReportDirectory");
+        reportFormat = getData("ReportFormat");
+        testName = getData("TestName");
 
         dc.setCapability("reportDirectory", reportDirectory);
         dc.setCapability("reportFormat", reportFormat);
         dc.setCapability("testName", testName);
-        dc.setCapability(MobileCapabilityType.UDID, "ac58c4ec");
-        dc.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, "com.shivgadhia.android.ukMortgageCalc");
-        dc.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, ".MainActivity");
-        appiumDriver = new AndroidDriver(new URL("http://localhost:4723/wd/hub"), dc);
+        dc.setCapability(MobileCapabilityType.UDID, getData("UDID"));
+        dc.setCapability(AndroidMobileCapabilityType.APP_PACKAGE, getData("AppPackage"));
+        dc.setCapability(AndroidMobileCapabilityType.APP_ACTIVITY, getData("AppActivity"));
+        appiumDriver = new AndroidDriver(new URL(getData("driverURL")), dc);
         appiumDriver.setLogLevel(Level.INFO);
         ManageDB.initSQLConnection();
         ManagePages.initializeAppiumPages();
     }
-
 
 
     public static WebDriver initChromeDriver() {
@@ -209,6 +208,12 @@ public class CommonOps extends Variables {
             case "mobile":
                 fXmlFile = new File("./Files/Mortgage.xml");
                 break;
+            case "electron":
+                fXmlFile = new File("./Files/ToDoList.xml");
+                break;
+            case "web":
+                fXmlFile = new File("./Files/Grafana.xml");
+                break;
         }
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
         try {
@@ -223,9 +228,9 @@ public class CommonOps extends Variables {
 
     @AfterClass
     public static void endSession() throws SQLException {
-        if(activeDB.equals("yes"))
+        if (activeDB.equalsIgnoreCase("yes"))
             ManageDB.closeDBCon();
-        else if(!platform.equals("api"))
+        if (!platform.equalsIgnoreCase("api"))
             driver.quit();
     }
 }

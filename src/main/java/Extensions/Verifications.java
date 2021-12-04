@@ -23,7 +23,7 @@ public class Verifications extends CommonOps {
         assertEquals(actual, expected);
     }
 
-    @Step("Verify image exists.")
+    @Step("Verify image from sikuli exists on web page.")
     public static void verifyImage(boolean result) {
         assertTrue(result);
     }

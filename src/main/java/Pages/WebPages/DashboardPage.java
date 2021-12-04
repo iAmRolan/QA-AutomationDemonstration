@@ -16,13 +16,13 @@ public class DashboardPage {
     @FindBy(css = "div > div > div > span")
     private static WebElement resizeableElement;
 
-    @FindBy(xpath = "//*[@id=\"reactRoot\"]/div/main/div[3]/div/div/div[1]/div/div/div[1]/div/div/div/section/div[2]/div")
+    @FindBy(css = "div.scrollbar-view > div > div > div > div > div > div:nth-child(1) > section > div.panel-content > div")
     private static WebElement dashboard;
 
     @FindBy(xpath = "//*[@id=\"reactRoot\"]/div/main/div[3]/div/div[2]/div[2]/div[1]/div/div/div/div[2]/div/a/div[2]/div")
     private static WebElement currentDashboard;
 
-    @FindBy(xpath = "//*[@id=\"reactRoot\"]/div/main/div[3]/div/div/div[1]/div/div/div[1]/div/div/div/section/div[1]/header/div/h2")
+    @FindBy(css = "h2.css-1m35bcr")
     private static WebElement dashboardHeader;
 
 

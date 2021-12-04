@@ -14,13 +14,13 @@ public class CreateDashboardPage {
     @FindBy(css = "div:nth-child(2) > textarea")
     private static WebElement description;
 
-    @FindBy(css = "div:nth-child(4) > div.css-zer0lh > div:nth-child(1) > div:nth-child(2) > div > label:nth-child(4)")
+    @FindBy(xpath = "//label[text()='Bars']")
     private static WebElement barsStyle;
 
     @FindBy(css = "div:nth-child(4) > div.css-zer0lh > div:nth-child(3) > div:nth-child(2) > div > label > div.css-fvkifa-input-wrapper > div > input")
     private static WebElement lineWidthTextBox;
 
-    @FindBy(css = " div.css-zer0lh > div:nth-child(1) > div:nth-child(2) > div > div > div > div > input")
+    @FindBy(xpath = "//*[@class='css-zer0lh']//*[@placeholder='Choose']")
     private static WebElement unitPicker;
 
     @FindBy(css = "body > div:nth-child(13) > div > div > div > ul")
@@ -32,7 +32,7 @@ public class CreateDashboardPage {
     @FindBy(xpath = "/html/body/div[4]/div/div/div/ul[2]//*[@title='Datetime ISO']")
     private static WebElement dateTimeISO;
 
-    @FindBy(xpath = "//*[@id=\"reactRoot\"]/div/main/div[3]/div[2]/div[1]/div[6]/button/div")
+    @FindBy(xpath = "//button[contains(@title,'back to dashboard')]")
     private static WebElement applyButton;
 
 

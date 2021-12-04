@@ -22,9 +22,10 @@ public class GrafanaWorkFlows extends CommonOps {
     @Step("Login to grafana dashboard.")
     public static void loginToGrafana() {
         // Set userName, userPassword and Header.
-        expectedGrafanaHeader = "Welcome to Grafana";
-        userName = "admin";
-        userPassword = "HazakPo";
+        expectedGrafanaHeader = getData("ExpectedGrafanaHeader");
+        userName = getData("LoginUsername");
+        userPassword = getData("LoginPassword");
+
         UIActions.sendKeysToElement(loginPage.getUsernameInput(), userName);
         UIActions.sendKeysToElement(loginPage.getPasswordInput(), userPassword);
         UIActions.clickElement(loginPage.getLoginButton());
@@ -33,21 +34,21 @@ public class GrafanaWorkFlows extends CommonOps {
     @Step("Validate grafana logo exists")
     public static boolean isGrafanaLogoExists() {
         // Set image repository path
-        imageRepoPath = "C:\\Automation\\QA-AutomationDemonstration\\Files\\";
+        imageRepoPath = getData("ImageRepoPath");
         Uninterruptibles.sleepUninterruptibly(2, TimeUnit.SECONDS);
-        return screen.exists(imageRepoPath + "Grafana.png") != null;
+        return screen.exists(imageRepoPath + getData("ImageFileName")) != null;
     }
 
     @Step("Resize Dashboard.")
     public static void resizeDashboard() {
         // Set offset values
-        xOffset = 400;
-        yOffset = 250;
+        xOffset = Integer.parseInt(getData("Xoffset"));
+        yOffset = Integer.parseInt(getData("Yoffset"));
 
         // Set expected dimensions
         expectedDimensions = new HashMap<String, String>() {{
-            put("width", "1275px");
-            put("height", "550px");
+            put("width", getData("ExpectedWidth"));
+            put("height", getData("ExpectedHeight"));
         }};
 
         // Resize element
@@ -71,12 +72,14 @@ public class GrafanaWorkFlows extends CommonOps {
         }
     }
 
+    @Step("Delete panel from dashboard")
     public static void deletePanel() {
         // Set panel name to be deleted.
-        panelNameToDelete = "New Panel";
+        panelNameToDelete = getData("PanelNameToDelete");
 
         // Set dashboard to delete from
-        dashBoardToDelete = "New dashboard1";
+        dashBoardToDelete = getData("DashBoardToDelete");
+
 
         UIActions.hoverOverElement(grafanaMenuPage.getSearchDashboards());
         UIActions.clickElement(grafanaMenuPage.getSearchDashboardsLabel());
@@ -93,9 +96,9 @@ public class GrafanaWorkFlows extends CommonOps {
         UIActions.clickElement(panelsPage.getAcceptRemoveAlert());
     }
 
-    @Step
+    @Step("Create new Dashboard.")
     public static void createDashboard() {
-        lastPanelAddedTitle = "Test Panel";
+        lastPanelAddedTitle = getData("LastPanelAddedTitle");
 
         UIActions.clickElement(grafanaMenuPage.getPlusElement());
         UIActions.clickElement(grafanaMenuPage.getAddDashboardElement());
@@ -110,12 +113,13 @@ public class GrafanaWorkFlows extends CommonOps {
         UIActions.clickElement(createDashboardPage.getApplyButton());
     }
 
-    // Helper function.
+    @Step("Navigate to admin panel.")
     public static void goToServerAdminPage() {
         UIActions.hoverOverElement(grafanaMenuPage.getServerAdminElement());
         UIActions.clickElement(grafanaMenuPage.getServerAdminUsers());
     }
 
+    // Helper function for panel deletion.
     private static WebElement searchPanel(String panelName) {
         for (WebElement elem : panelsPage.getAllPanelsTitleList()
         ) {

@@ -4,4 +4,11 @@
     <SelectAmountColumn>SELECT `amount` FROM `MortgageCalculatorData`</SelectAmountColumn>
     <SelectTermColumn>SELECT `term` FROM `MortgageCalculatorData`</SelectTermColumn>
     <SelectRateColumn>SELECT `rate` FROM `MortgageCalculatorData`</SelectRateColumn>
+    <ReportDirectory>reports</ReportDirectory>
+    <ReportFormat>xml</ReportFormat>
+    <TestName>Untitled</TestName>
+    <UDID>ac58c4ec</UDID>
+    <AppPackage>com.shivgadhia.android.ukMortgageCalc</AppPackage>
+    <AppActivity>.MainActivity</AppActivity>
+    <driverURL>http://localhost:4723/wd/hub</driverURL>
 </Environment>

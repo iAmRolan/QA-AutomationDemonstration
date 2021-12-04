@@ -11,10 +11,8 @@ import io.qameta.allure.Step;
 import java.sql.SQLException;
 
 public class MortgageWorkFlows extends CommonOps {
-    @Step
-    @Description("Enter data from DB and verify the data received is above 0")
+    @Step("Enter data from DB and verify the data received is above 0")
     public static void enterDataFromDB() throws SQLException {
-        UIActions.sendKeysToElement(mortgagePage.getAmountInput(), "lala");
 
         amountList = ManageDB.getCredentials(getData("SelectAmountColumn"));
         termList = ManageDB.getCredentials(getData("SelectTermColumn"));
@@ -27,8 +25,7 @@ public class MortgageWorkFlows extends CommonOps {
         softAssert.assertAll();
     }
 
-    @Step
-    @Description("Enter data and calculate")
+    @Step("Enter data and calculate")
     public static void enterDataInInputsAndCalculate(int index) {
         UIActions.sendKeysToElement(mortgagePage.getAmountInput(), amountList.get(index));
         UIActions.sendKeysToElement(mortgagePage.getTermInput(), termList.get(index));
@@ -36,8 +33,7 @@ public class MortgageWorkFlows extends CommonOps {
         UIActions.clickElement(mortgagePage.getCalculateBtn());
     }
 
-    @Step
-    @Description("Verify values above zero")
+    @Step("Verify values above zero")
     public static void verifyAboveZeroValues(int index) {
         Verifications.verifyValuesAboveZero(amountList.get(index), termList.get(index), rateList.get(index));
     }
@@ -46,6 +42,5 @@ public class MortgageWorkFlows extends CommonOps {
     public static void checkIfSaved() {
         UIActions.clickElement(mortgagePage.getSaveBtn());
         UIActions.swipeScreen(UIActions.Direction.LEFT);
-        Verifications.verifyLastObjSaved(mortgagePage.getLastSavedRepayment().getText(), getData("ExpectedRepaymentSaved"));
     }
 }

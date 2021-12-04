@@ -8,22 +8,23 @@ import org.openqa.selenium.support.FindBy;
  * @project QA-AutomationDemonstration
  */
 public class GrafanaMenuPage {
+
     @FindBy(xpath = "//*[@class='css-1pe5hie dropdown'][2]")
     private static WebElement plusElement;
 
     @FindBy(xpath = "//*[@id=\"reactRoot\"]/div/main/div[3]/div/div/div[1]/div/div/div[1]/div/div/div/div/div/div[2]/div[1]/div[1]")
     private static WebElement addDashboardElement;
 
-    @FindBy(css = "div:nth-child(7) > a > span > div > svg")
+    @FindBy(css = "a[aria-label='Server Admin']")
     private static WebElement serverAdminElement;
 
-    @FindBy(css = "div:nth-child(7) > ul > li:nth-child(2) > a")
+    @FindBy(css = "ul a.css-10jwdjd[href='/admin/users']")
     private static WebElement serverAdminUsersElement;
 
-    @FindBy(xpath = "//*[@id=\"reactRoot\"]/div/main/div[3]/div/div/div[1]/div/div/div[1]/div/div/div[1]/section/div[2]/div/h1")
+    @FindBy(css = "h1.css-1aanzv4")
     private static WebElement grafanaHeader;
 
-    @FindBy(xpath = "//*[@id=\"reactRoot\"]/div/main/div[3]/header/div/nav/a")
+    @FindBy(css = "nav[aria-label='Search links'] a.css-mgcb1x")
     private static WebElement generalButton;
 
     @FindBy(css = "button > span > div > svg > path")

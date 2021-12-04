@@ -8,7 +8,7 @@ import org.openqa.selenium.support.FindBy;
  * @project QA-AutomationDemonstration
  */
 public class LoginPage {
-    @FindBy(css = "div:nth-child(1) > div:nth-child(2) > div > div > input")
+    @FindBy(css = "input[name='user']")
     private static WebElement usernameInput;
 
     @FindBy(css = "#current-password")
